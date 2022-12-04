@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Members</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+       <a class="home btn" href="/">Home</a>
+       <a class="btn" href="/logout" class="btn btn-primary col-3">Logout</a>
+    </nav>
+    <main>
+        <h1>MEMBERS</h1>
+        <h3>Add New Member:</h3>
+        <form action="/members/addMember" method="POST" >
+            <input name="name" value="" placeholder="Name" type="text">
+            <input name="position" value="" placeholder="Position" type="text">
+            <input name="number" value="" placeholder="Contact Number" type="tel" pattern="[0-9]*" required>
+            <input name="membershipLevel" value="" placeholder="Membership Level" type="text">
+            <input type="submit" value="Add Member">
+        </form>
+    
+        <h3>Members</h3>
+        <% if (locals.members) { %>   
+            <ul>
+            <% locals.members.forEach(member => { %>
+                <li> 
+                    <div class="text-container">
+                        <p>Name: <%= member.name %></p>  
+                        <p>Position: <%= member.position %></p>  
+                        <p>Number: <%= member.number %></p>  
+                        <p>Membership Level: <%= member.membershipLevel %></p>  
+                        <p>Member Since: <%= member.createdAt.toString().slice(0,15) %></p>  
+                    </div>
+                    <form action="/members/<%= member.id %>?_method=DELETE" 
+                        method="POST">
+                        <input type="submit" value="Delete">
+                    </form>
+                </li>
+            <% }) %>
+            </ul>
+        <% } %>
+    
+    </main>
+</body>
+</html>

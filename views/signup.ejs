@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+  <body>
+    <nav>
+      <a href="/" class="btn">Home</a>
+      <div>
+          <a href="/signup" class="btn"> Signup</a>
+          <a href="/login" class="btn"> Login</a>
+      </div>
+  </nav>
+    <main>
+        <section>
+            <% if (locals.messages.errors) { %>
+                <% messages.errors.forEach( el => { %>
+                    <div><%= el.msg %></div>
+                <% }) %>    
+            <% } %>
+            <% if (locals.messages.info) { %>
+                <% messages.info.forEach( el => { %>
+                    <div><%= el.msg %></div>
+                <% }) %>    
+            <% } %>
+            <form action="/signup" method="POST">
+                <div>
+                    <!-- <label for="userName" class="">User Name</label> -->
+                    <input type="text" class="" id="userName" placeholder="Username" name="userName">
+                  </div>
+                <div>
+                  <!-- <label for="exampleInputEmail1" class="">Email address</label> -->
+                  <input type="email" class="" id="exampleInputEmail1" placeholder="Email Address" aria-describedby="emailHelp" name="email">
+                </div>
+                <div>
+                  <!-- <label for="password" class="">Password</label> -->
+                  <input type="password" class="" id="password" placeholder="Password" name="password">
+                </div>
+                <div>
+                    <!-- <label for="confirmPassword" class="">Confirm Password</label> -->
+                    <input type="password" class="" id="confirmPassword" placeholder="Confirm Password" name="confirmPassword">
+                  </div>
+                <button type="submit" class="btn">Submit</button>
+              </form>
+              <div>
+                <a href="login">Already Have An Account?</a>
+              </div>
+        </section>
+    </main>
+  </body>
+</html>
+

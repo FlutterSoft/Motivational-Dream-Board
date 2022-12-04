@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+
+:root{
+    --clr-primary-500: hsl(0, 78%, 62%);
+    --clr-primary-400: hsl(212, 86%, 64%);
+    --clr-primary-200: hsl(34, 97%, 64%);
+    --clr-primary-100: hsl(180, 62%, 55%);
+
+    --clr-neutral-500: hsl(234, 12%, 34%);
+    --clr-neutral-300:hsl(229, 6%, 66%); 
+    --clr-neutral-100: hsl(0, 0%, 98%);
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    background-color: var(--clr-neutral-100);
+    margin-bottom: 4em;
+    display: grid;
+    justify-content: center;
+}
+
+.title-section{
+    text-align: center;
+    max-width: 36em;
+    margin: 4em auto;
+    padding: 1em;
+}
+
+h1{
+    font-size: 2.2em;
+    font-weight: 200;
+    color: var(--clr-neutral-500);
+    margin: 0.2em 0;
+}
+
+h3{
+    font-size: 2.1em;
+    font-weight: 200;
+    color: var(--clr-neutral-500);
+    margin: 0.2em 0;
+}
+
+h4{
+    font-size: 2.1em;
+    font-weight: 700;
+    color: var(--clr-neutral-500);
+    margin: 0.2em 0;
+}
+
+p{
+    color: var(--clr-neutral-300);
+
+}
+
+.card-container{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, 23em);
+    gap: 3em;
+    grid-template-rows: repeat(4 1fr);
+    grid-template-areas: 
+    "card1 card2"
+    "card1 card2"
+    "card3 card4"
+    "card3 card4";
+}
+
+@media screen and (max-width: 50em) {
+    .card-container{
+        grid-template-areas: 
+        "card1"
+        "card2"
+        "card3"
+        "card4";
+    }
+} 
+
+@media screen and (min-width: 70em) {
+    .card-container{
+        grid-template-areas: 
+        ". card2 ."
+        "card1 card2 card4"
+        "card1 card3 card4"
+        ". card3 .";
+    }
+} 
+
+.card{
+    background-color: white;
+    padding: 2em;
+    box-shadow: 1px 0px 20px hsla(229, 6%, 66%, 0.483);
+    display: flex;
+    flex-direction: column;
+    max-width: 20em;
+    border-radius: 5px;
+}
+.card:nth-child(1){
+    border-top: 4px solid var(--clr-primary-100);
+    grid-area: card1
+}
+.card:nth-child(2){
+    border-top: 4px solid var(--clr-primary-500);
+    grid-area: card2;
+
+}
+.card:nth-child(3){
+    border-top: 4px solid var(--clr-primary-200);
+    grid-area: card3;
+
+}
+.card:nth-child(4){
+    border-top: 4px solid var(--clr-primary-400);
+    grid-area: card4;
+}
+
+.card-title{
+    color: var(--clr-neutral-500);
+    font-size: 1.9em;
+}
+
+.card-img{
+    width: 3em;
+    align-self: flex-end;
+}
+
+.card-p{
+    color: var(--clr-neutral-300);
+    margin-bottom: 2em;
+}
