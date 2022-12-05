@@ -295,3 +295,17 @@ footer a:hover,
     margin: auto;
     text-align: center;
 }
+
+.demoImg{
+    width: 50%;
+    box-shadow: 1px 0px 12px hsla(229, 6%, 66%, 0.483);
+    margin-top: 50px;
+}
+
+.flex-sbs{
+    display: flex;
+    gap: 50px;
+    padding: 50px;
+    justify-content: center;
+    align-items: center;
+}

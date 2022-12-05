@@ -20,12 +20,23 @@
 
     <nav class="homepageNav">
         <% if (locals.user) { %>
-            <a href="/logout" class="btn"> Logout</a>
             <a href="/cards">Your Dream Board</a>
+            <a href="/logout" class="btn"> Logout</a>
         <% } else { %>
             <a href="/signup" class="btn"> Signup</a>
             <a href="/login" class="btn"> Login</a>
             <% } %> 
      </nav>
+     <main>
+      <section class="flex-sbs">
+        <img class="demoImg" src="./images/demo.jpg" alt="">
+        <div>
+          <h3>Add a dream</h3>
+          <p>Set a topic for your dream, add it and watch your board populate with dream cards!</p>
+        </div>
+      </section>
+
+     </main>
+
 </body>
 </html>
