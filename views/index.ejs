@@ -21,12 +21,11 @@
     <nav class="homepageNav">
         <% if (locals.user) { %>
             <a href="/logout" class="btn"> Logout</a>
-            <a href="/cards">View Your Dream Board</a>
-        <% } %>
+            <a href="/cards">Your Dream Board</a>
+        <% } else { %>
             <a href="/signup" class="btn"> Signup</a>
             <a href="/login" class="btn"> Login</a>
+            <% } %> 
      </nav>
-     
-
 </body>
 </html>
