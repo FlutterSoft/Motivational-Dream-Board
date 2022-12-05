@@ -9,15 +9,24 @@
 </head>
 <body>
     <nav>
-        <a href="/" class="btn">Home</a>
-        <div>
+        <section class="title-section">
+          <h1> <a href="/">Dream Board </a> </h1>
+          <h4> Envision Your Dreams </h4>
+          <p>
+            A space to keep all of your dreams!
+          </p>
+        </section>
+      </nav>
+
+    <nav class="homepageNav">
+        <% if (locals.user) { %>
+            <a href="/logout" class="btn"> Logout</a>
+            <a href="/cards">View Your Dream Board</a>
+        <% } %>
             <a href="/signup" class="btn"> Signup</a>
             <a href="/login" class="btn"> Login</a>
-            <a href="/logout" class="btn"> Logout</a>
-        </div>
      </nav>
      
-     <a href="/cards">View Your Dream Cards</a>
 
 </body>
 </html>

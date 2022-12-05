@@ -8,16 +8,14 @@
   <link rel="stylesheet" href="style.css">
 
 </head>
-<body>
+<body class="loginPage">
+  <nav class="defaultNav">
+    <a href="/"> <h2>Dream Board</h2></a>
+  </nav>
   <main>
       <section>
-        <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
-        <div><%= el.msg %></div>
-        <% }) %> <% } %> <% if (locals.messages.info) { %> <%
-        messages.info.forEach( el => { %>
-        <div><%= el.msg %></div>
-        <% }) %> <% } %>
-        <form action="/login" method="POST">
+        <form class="loginForm" action="/login" method="POST">
+          <h1>Login</h1>
           <div>
             <input
               type="email"
@@ -37,11 +35,19 @@
               placeholder="Password"
             />
           </div>
-          <button type="submit" class="btn">Submit</button>
-        </form>
-        <div>
+          <div class="errors">
+            <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
+              <div><%= el.msg %></div>
+              <% }) %> <% } %> <% if (locals.messages.info) { %> <%
+              messages.info.forEach( el => { %>
+              <div><%= el.msg %></div>
+              <% }) %> <% } %>
+          </div>
+          <input type="submit" class="btn" value="Submit"/>
           <a href="signup">Create Account</a>
-        </div>
+
+        </form>
+
       </section>
   </main>
 </body>

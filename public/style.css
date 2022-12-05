@@ -155,7 +155,9 @@ p{
     justify-content: space-between;
 }
 
-.dreamForm{
+.dreamForm, 
+.loginForm,
+.signupForm{
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -170,20 +172,33 @@ p{
     align-items: center;
 }
 
-.dreamForm input{
+.dreamForm input, 
+.loginForm input,
+.signupForm input{
     padding: 2em;
     background-color: var(--clr-neutral-100);
     border-radius: 5px;
     border: 1px solid var(--clr-neutral-300);
 
 }
-.dreamForm input[type="submit"]{
+.dreamForm input[type="submit"], 
+.loginForm input[type="submit"],
+.signupForm input[type="submit"]{
     background:none;
     margin: auto;
     padding: 1em 2em;
     width: 10em;
     cursor: pointer;
     text-align: center;
+    transition: all 400ms;
+
+}
+
+.dreamForm input[type="submit"]:hover,
+.loginForm input[type="submit"]:hover,
+.signupForm input[type="submit"]:hover{
+    box-shadow: 1px 0px 12px hsla(229, 6%, 66%, 0.483);
+    transition: all 400ms;
 }
 
 .dreamForm select{
@@ -194,7 +209,7 @@ p{
     padding: 0.5em 1em;
     cursor: pointer;
     width: 10em;
-
+    text-align: center;
 }
 
 .dreamForm label{
@@ -204,3 +219,66 @@ p{
     /* margin: 0.2em 0; */
 }
 
+footer{
+    margin: auto;
+    margin-top:50px;
+}
+
+footer a{
+    font-size: 1.4em;
+    font-weight: 500;
+    color: var(--clr-neutral-500);
+    transition: all 400ms;
+}
+
+footer a:hover, 
+.homepageNav a:hover, 
+.loginForm a:hover,
+.signupForm a:hover{
+    opacity: 80%;
+    text-shadow: 1px 0px 8px hsla(229, 6%, 66%, 0.383);
+    transition: all 400ms;
+}
+
+.homepageNav{
+    display: flex;
+    justify-content: space-around;
+}
+.homepageNav a, 
+.loginForm a,
+.signupForm a{
+    font-size: 1.4em;
+    font-weight: 500;
+    color: var(--clr-neutral-500);
+    transition: all 400ms; 
+}
+
+.signupPage a,
+.loginPage a{
+    font-size: 1.4em;
+    font-weight: 500;
+    color: var(--clr-neutral-500);
+    transition: all 400ms; 
+}
+
+.signupPage nav,
+.loginPage nav{
+    margin: auto;
+}
+.signupPage h2,
+.loginPage h2{
+    font-size: 1.4em;
+    font-weight: 500;
+    color: var(--clr-neutral-500);
+    transition: all 400ms;   
+}
+.title-section a{
+    text-decoration: inherit;
+    color: inherit;
+}
+
+.errors{
+    font-size: 1em !important;
+    color: var(--clr-primary-500);
+    text-align: center;
+}
