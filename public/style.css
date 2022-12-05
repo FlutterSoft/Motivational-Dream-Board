@@ -110,7 +110,7 @@ p{
     display: flex;
     flex-direction: column;
     width: 20em;
-    max-width: 20em;
+    max-width: 75vw;
     border-radius: 5px;
     margin:auto;
 }
@@ -172,6 +172,10 @@ p{
     align-items: center;
 }
 
+.dreamForm h3{
+    text-align: center;
+}
+
 .dreamForm input, 
 .loginForm input,
 .signupForm input{
@@ -179,7 +183,7 @@ p{
     background-color: var(--clr-neutral-100);
     border-radius: 5px;
     border: 1px solid var(--clr-neutral-300);
-
+    max-width: 90%;
 }
 .dreamForm input[type="submit"], 
 .loginForm input[type="submit"],
