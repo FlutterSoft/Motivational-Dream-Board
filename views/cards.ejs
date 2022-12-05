@@ -13,7 +13,7 @@
 <body>
   <nav>
     <section class="title-section">
-      <h1> Dream Cards </h1>
+      <h1> <%= user.userName %>'s Dream Board </h1>
       <h4> Envision Your Dreams </h4>
       <p>
         A space to keep all of your dreams!
@@ -25,32 +25,37 @@
     <div class="card-container">
       <% if (locals.cards) { %>   
         <% locals.cards.forEach(card => { %>
-          <div class="card">
+          <div class="card card-<%= card.dreamTopic %>">
             <h4 class="card-title"> <%= card.dreamTopic %>  </h4>
             <p class="card-p">  
               <%= card.dream %> 
             </p>
-            <img class="card-img" src="./images/<%= card.dreamTopic %>.svg" alt="">
-          <form action="/cards/<%= card.id %>?_method=DELETE" 
+          <form class="deleteForm" action="/cards/<%= card.id %>?_method=DELETE" 
               method="POST">
-              <input type="submit" value="Delete">
-          </form>
+              <button type="submit" class="deleteBtn">
+                <img class="deleteIcon" src="./images/Trash.svg">
+              </button>
+              <img class="card-img" src="./images/<%= card.dreamTopic %>.svg" alt="">
+            </form>
         </div>
         <% }) %>
       <% } %>
     </div>
   
-    <form action="/cards/addCard" method="POST">
-      <label for="dreamList">Dream Type</label>
-      <select id="dreamList" name="dreamTopic">
-        <option value="Money">Money</option>
-        <option value="Family">Family</option>
-        <option value="Relationships">Relationships</option>
-        <option value="Self">Self</option>
-        <option value="Health">Health</option>
-      </select>
+    <form class="dreamForm" action="/cards/addCard" method="POST">
+      <h3>Add A New Dream</h3>
       <input name="dream" value="" placeholder="What's Your Dream?" type="text">
-      <input type="submit" value="Add Dream Card">
+
+        <!-- <label for="dreamList">Dream Type</label> -->
+        <select id="dreamList" name="dreamTopic">
+          <option value="Money">Money</option>
+          <option value="Family">Family</option>
+          <option value="Friendship">Friendship</option>
+          <option value="Self">Self</option>
+          <option value="Health">Health</option>
+        </select>
+
+      <input type="submit" value="Add Dream">
   </form>
 
 
