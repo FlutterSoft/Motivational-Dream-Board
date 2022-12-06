@@ -121,7 +121,7 @@ p{
 .card.card-Self{
     border-top: 4px solid var(--clr-primary-100);
 }
-.card.card-Family{
+.card.card-Family, .card.card-Health{
     border-top: 4px solid var(--clr-primary-500);
 }
 .card.card-Money{
