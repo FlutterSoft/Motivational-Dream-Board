@@ -1,4 +1,4 @@
-# Club Members
+# Motivational Dream Board
 A fullstack project utilizing Express, Node.js, Mongoose/MongoDB, Passport.
 It allows users to create accounts and add their motivational dreams to their board in the form of cards.
 Sessions are stored allowing users to stay logged in for a period of time when closing tabs. 
